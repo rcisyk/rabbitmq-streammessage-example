@@ -1,0 +1,33 @@
+An example that publishes and receives JMS StreamMessages using RabbitMQ.
+The SampleMessage contains
+    String _messageName;
+    long _messageNum;
+    String _regionName;
+    SampleComponent[] _components
+, where each SampleComponent has
+    int _key1;
+    int _key2;
+    double _value;
+The sending logic writes the common fields, the number of
+components and the individual components to javax.jms.StreamMessage and
+then sends it. The receiving logic reads the common fields, the number of
+components and the individual components from the received
+StreamMessage. The program fails with the following exception if
+the number of components in the array is greater than 40:
+Caused by: java.io.OptionalDataException
+       at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1699)
+       at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540)
+       at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498)
+       at com.rabbitmq.jms.client.RMQMessage.readPrimitive(RMQMessage.java:1344)
+       at com.rabbitmq.jms.client.message.RMQStreamMessage.readPrimitiveType(RMQStreamMessage.java:94)
+       ... 10 more
+
+Java version: OpenJDK 21.0.2
+OS Version: Debian 6.1.85
+
+To compile:
+javac -classpath "lib/amqp-client-5.22.0.jar:lib/javax.jms-api.jar:lib/rabbitmq-jms-2.10.0.jar" SampleMessage.java SampleStreamMessageTest.java
+
+To run:
+Make sure .bindings file is copied into current-dir/config/properties/include directory.
+java -classpath ".:lib/amqp-client-5.22.0.jar:lib/javax.jms-api.jar:lib/rabbitmq-jms-2.10.0.jar:lib/fscontext-4.6-b01.jar:lib/slf4j-api-1.7.36.jar" SampleStreamMessageTest
