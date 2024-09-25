@@ -1,0 +1,31 @@
+#Connection Factory Object
+ConnectionFactory/ClassName=javax.jms.TopicConnectionFactory
+ConnectionFactory/FactoryName=com.rabbitmq.jms.admin.RMQObjectFactory
+ConnectionFactory/RefAddr/0/Content=jms/ConnectionFactory
+ConnectionFactory/RefAddr/0/Type=name
+ConnectionFactory/RefAddr/0/Encoding=String
+ConnectionFactory/RefAddr/1/Content=javax.jms.TopicConnectionFactory
+ConnectionFactory/RefAddr/1/Type=type
+ConnectionFactory/RefAddr/1/Encoding=String
+ConnectionFactory/RefAddr/2/Content=com.rabbitmq.jms.admin.RMQObjectFactory
+ConnectionFactory/RefAddr/2/Type=factory
+ConnectionFactory/RefAddr/2/Encoding=String
+ConnectionFactory/RefAddr/3/Content=localhost
+ConnectionFactory/RefAddr/3/Type=host
+ConnectionFactory/RefAddr/3/Encoding=String
+
+#javax.jms.Topic.a.b Topic
+javax.jms.Topic.a.b/ClassName=javax.jms.Topic
+javax.jms.Topic.a.b/FactoryName=com.rabbitmq.jms.admin.RMQObjectFactory
+javax.jms.Topic.a.b/RefAddr/0/Content=jms/Topic
+javax.jms.Topic.a.b/RefAddr/0/Type=name
+javax.jms.Topic.a.b/RefAddr/0/Encoding=String
+javax.jms.Topic.a.b/RefAddr/1/Content=javax.jms.Topic
+javax.jms.Topic.a.b/RefAddr/1/Type=type
+javax.jms.Topic.a.b/RefAddr/1/Encoding=String
+javax.jms.Topic.a.b/RefAddr/2/Content=com.rabbitmq.jms.admin.RMQObjectFactory
+javax.jms.Topic.a.b/RefAddr/2/Type=factory
+javax.jms.Topic.a.b/RefAddr/2/Encoding=String
+javax.jms.Topic.a.b/RefAddr/3/Content=javax.jms.Topic.a.b
+javax.jms.Topic.a.b/RefAddr/3/Type=destinationName
+javax.jms.Topic.a.b/RefAddr/3/Encoding=String
